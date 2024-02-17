@@ -19,7 +19,7 @@ const Subscriptions = ({data}) => {
                     <li key={index} className="ticket-detail">
                         <h4>{ticket.id}. {ticket.title}</h4>
                         <p>{ticket.author}</p>
-                        <p>{ticket.content}</p>
+                        <p className='content'>{ticket.content}</p>
                         <p>{ticket.date}</p>
                     </li>
                 </Link>

@@ -100,6 +100,13 @@ a {
 .options button {
     margin: 10px 20px;
 }
+.content{
+    overflow: hidden;
+    display: inline-block;
+    width: 120px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
 .error-msg {
     color: red;

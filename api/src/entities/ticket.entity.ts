@@ -14,6 +14,6 @@ export class Ticket {
   @Column({ length: 20 })
   date: string;
 
-  @Column({ length: 20 })
+  @Column({ type: 'text' })
   content: string;
 }

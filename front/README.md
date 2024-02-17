@@ -1,4 +1,4 @@
-# front-hexalud
+# FrontEnd-hexalud
 
 Esta Aplicacion fue realizada en NextJS
 
@@ -15,7 +15,7 @@ npm install
 Comandos para ejecutar:
 
 ```sh
-npm run "dev", "build", "start", "lint" 
+npm run dev
 ```
 
 #### Nombre: Eduardo Alejandro Hernandez Garcia

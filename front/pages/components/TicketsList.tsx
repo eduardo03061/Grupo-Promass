@@ -1,29 +1,26 @@
 import Link from "next/link";
 
-const Subscriptions = ({data, typeSubscription}) => {
-    const getPrice = (monthly_price, annual_price) => {
-        const resultPrice = typeSubscription === 'Anual' ? annual_price : monthly_price;
+const Subscriptions = ({data}) => {
 
-        return resultPrice
-    }
     return (
         <div>
 
-            {data && data.map((subscription, index) => (
+            {data && data.map((ticket, index) => (
                 <Link href={{
-                    pathname: '/subscription',
+                    pathname: '/ticket',
                     query: {
-                        id: subscription._id,
-                        name: subscription.name,
-                        typeSubscription,
-                        mly_price: subscription.monthly_price,
-                        year_price: subscription.annual_price
+                        id: ticket.id,
+                        title: ticket.title,
+                        author: ticket.author,
+                        content: ticket.content,
+                        date: ticket.date,
                     },
                 }} key={index}>
-                    <li key={index} className="subscription-detail">
-                        <h4>{subscription.name}</h4>
-                        <p>{subscription.description}</p>
-                        <p>${getPrice(subscription.monthly_price, subscription.annual_price)}</p>
+                    <li key={index} className="ticket-detail">
+                        <h4>{ticket.id}. {ticket.title}</h4>
+                        <p>{ticket.author}</p>
+                        <p>{ticket.content}</p>
+                        <p>{ticket.date}</p>
                     </li>
                 </Link>
             ))}

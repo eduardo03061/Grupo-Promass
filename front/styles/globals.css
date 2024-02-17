@@ -1,78 +1,118 @@
-*{
+* {
     margin: 0;
 }
 
-body{
+body {
     font-family: sans-serif;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     min-height: 70px;
     align-items: center;
     padding: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-nav a{
+nav a {
     text-decoration: none;
     color: #00AB54;
     font-weight: 500;
     padding-right: 10px;
 }
+.search{
+    display: inline-block;
+}
 
-.logo{
+.search label{
+    display: inline-block;
+    margin-right: 1em;
+}
+.logo {
     display: flex;
 }
 
-.logo img{
-    height: 50px;
+
+.btn {
+    border-radius: 1em;
+    padding: 1em;
+    background-color: #00c573;
+    color: #fff;
+}
+
+.date {
+    float: right;
+}
+
+.btn-atras {
+    padding-left: 5em;
+}
+
+.form-ticket {
+    margin-top: 2em;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.form-ticket input {
+
+    margin-top: 10px;
+}
+
+.input {
+    align-items: center;
+    padding: 1em;
+    margin-left: 10%;
 }
 
 
+.input input {
+    float: right;
+    margin-right: 10%;
+}
 
-.subscription-detail{
+.ticket-detail {
     background-color: #00AB54;
     margin: 10px 10%;
     border-radius: 1em;
     padding: 1em;
     list-style: none;
 }
-a{
+
+a {
     text-decoration: none;
     color: #000
 }
-.banner-text{
-    background-color: #00AB54;
-    margin: 10px 10%;
-    padding: 1em;
-    list-style: none;
-}
-.options{
+
+.options {
     border-radius: 1em;
     background-color: #00AB54;
     margin-top: 50px;
     width: 50%;
     text-align: center;
     margin-left: auto;
+    padding-top: 1em;
     margin-right: auto;
 }
-.options button{
+
+.options button {
     margin: 10px 20px;
 }
-.error-cp{
+
+.error-msg {
     color: red;
     text-align: center;
 }
 
 
-
-@media (max-width:700px){
-    header{
+@media (max-width: 700px) {
+    header {
         flex-direction: column;
     }
 
-    nav{
+    nav {
         padding: 10px 0px;
     }
 }

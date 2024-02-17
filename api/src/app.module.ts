@@ -23,5 +23,4 @@ import { ConfigModule } from '@nestjs/config';
   ],
   controllers: [TicketController],
 })
-export class AppModule {
-}
+export class AppModule {}

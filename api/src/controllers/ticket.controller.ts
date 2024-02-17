@@ -6,26 +6,25 @@ import { Like } from 'typeorm';
 
 @Controller('tickets')
 export class TicketController {
-  constructor(@InjectRepository(Ticket)
-              private readonly ticketRepository: Repository<Ticket>,
-  ) {
-  }
-
+  constructor(
+    @InjectRepository(Ticket)
+    private readonly ticketRepository: Repository<Ticket>,
+  ) {}
 
   @Get()
-  async findAllTickets(@Query() data): Promise<Ticket []> {
+  async findAllTickets(@Query() data): Promise<Ticket[]> {
     const { query } = data;
     if (!query) {
       return await this.ticketRepository.find();
     }
 
-    return await this.ticketRepository.find(
-      {
-        where:
-          [{ title: Like(`%${query}%`) },
-            { content: Like(`%${query}%`) },
-            { author: Like(`%${query}%`) }],
-      });
+    return await this.ticketRepository.find({
+      where: [
+        { title: Like(`%${query}%`) },
+        { content: Like(`%${query}%`) },
+        { author: Like(`%${query}%`) },
+      ],
+    });
   }
 
   @Post()
@@ -35,7 +34,5 @@ export class TicketController {
     } catch (e) {
       return e;
     }
-
   }
-
 }

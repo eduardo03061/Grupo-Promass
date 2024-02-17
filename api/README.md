@@ -5,6 +5,7 @@ Esta Aplicacion fue realizada en NestJs
 ## Requisitos
 ```sh
     Node -v > 14.8
+    Postgresql
 ```
 
 Primeros pasos

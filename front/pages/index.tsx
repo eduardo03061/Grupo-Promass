@@ -61,10 +61,14 @@ export default function Home() {
 
 
     const searchTicket = async (data) => {
+        try {
+            const resp = await fetch(`http://localhost:3000/tickets?query=${data}`)
+            setListTickets(await resp.json())
+            setErrorMessage(false);
 
-        console.log('data',data)
-
-        const resp = await fetch(`http://localhost:3000/tickets?query=${data}`)
+        } catch (e) {
+            setErrorMessage(true);
+        }
 
     }
 
@@ -122,7 +126,8 @@ export default function Home() {
 
                         <div className='search'>
                             <label htmlFor="search">Buscar</label>
-                            <input type="search" name='search' id='search' onChange={(e) => searchTicket(e.target.value)} />
+                            <input type="search" name='search' id='search'
+                                   onChange={(e) => searchTicket(e.target.value)}/>
                         </div>
 
                         <button onClick={() => handleAddTicket()}>Agregar entrada</button>
